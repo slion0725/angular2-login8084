@@ -9,11 +9,15 @@ import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 
 import { SimpleComponent } from './simple/simple.component';
+import { JwtComponent } from './jwt/jwt.component';
+import { Auth0Component } from './auth0/auth0.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SimpleComponent
+    SimpleComponent,
+    JwtComponent,
+    Auth0Component
   ],
   imports: [
     BrowserModule,
