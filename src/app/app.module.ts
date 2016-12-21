@@ -8,9 +8,12 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 
+import { SimpleComponent } from './simple/simple.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SimpleComponent
   ],
   imports: [
     BrowserModule,
