@@ -1,7 +1,7 @@
 <h1>
   {{title}}
 </h1>
-<button>Simple</button>
-<button>JWT</button>
-<button>Auth0</button>
+<button [routerLink]="['/simple']">Simple</button>
+<button [routerLink]="['/jwt']">JWT</button>
+<button [routerLink]="['/auth0']">Auth0</button>
 <router-outlet></router-outlet>
