@@ -1,3 +1,6 @@
 <p>
   auth0 works!
 </p>
+
+<button (click)="auth0.login()" *ngIf="!auth0.authenticated()">Log In</button>
+<button (click)="auth0.logout()" *ngIf="auth0.authenticated()">Log Out</button>
