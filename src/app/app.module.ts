@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, Http, RequestOptions } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
@@ -13,6 +13,17 @@ import { RouteModule } from './route.module';
 import { SimpleComponent } from './simple/simple.component';
 import { JwtComponent } from './jwt/jwt.component';
 import { Auth0Component } from './auth0/auth0.component';
+
+import { AUTH_PROVIDERS, AuthHttp, AuthConfig } from 'angular2-jwt';
+import { Auth0Service } from './services/auth0.service';
+
+export function authHttpServiceFactory(http: Http, options: RequestOptions) {
+  return new AuthHttp(new AuthConfig({
+    tokenName: 'token',
+          tokenGetter: (() => sessionStorage.getItem('token')),
+          globalHeaders: [{'Content-Type':'application/json'}],
+     }), http, options);
+}
 
 @NgModule({
   declarations: [
@@ -28,7 +39,15 @@ import { Auth0Component } from './auth0/auth0.component';
     MaterialModule.forRoot(),
     RouteModule
   ],
-  providers: [],
+  providers: [
+    // AUTH_PROVIDERS,
+    Auth0Service,
+    {
+      provide: AuthHttp,
+      useFactory: authHttpServiceFactory,
+      deps: [Http, RequestOptions]
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
