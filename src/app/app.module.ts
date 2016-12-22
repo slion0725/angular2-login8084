@@ -10,9 +10,11 @@ import 'hammerjs';
 
 import { RoutingModule } from './routing.module';
 
+import { HomeComponent } from './home/home.component';
 import { SimpleComponent } from './simple/simple.component';
 import { JwtComponent } from './jwt/jwt.component';
 import { Auth0Component } from './auth0/auth0.component';
+import { LogoutComponent } from './logout/logout.component';
 
 import { AUTH_PROVIDERS, AuthHttp, AuthConfig } from 'angular2-jwt';
 import { Auth0Service } from './services/auth0.service';
@@ -29,9 +31,11 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     SimpleComponent,
     JwtComponent,
     Auth0Component,
+    LogoutComponent,
     PagenotfoundComponent
   ],
   imports: [
