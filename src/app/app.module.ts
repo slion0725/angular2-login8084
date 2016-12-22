@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 
-import { RouteModule } from './route.module';
+import { RoutingModule } from './routing.module';
 
 import { SimpleComponent } from './simple/simple.component';
 import { JwtComponent } from './jwt/jwt.component';
@@ -16,6 +16,7 @@ import { Auth0Component } from './auth0/auth0.component';
 
 import { AUTH_PROVIDERS, AuthHttp, AuthConfig } from 'angular2-jwt';
 import { Auth0Service } from './services/auth0.service';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   return new AuthHttp(new AuthConfig({
@@ -30,14 +31,15 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     AppComponent,
     SimpleComponent,
     JwtComponent,
-    Auth0Component
+    Auth0Component,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterialModule.forRoot(),
-    RouteModule
+    RoutingModule
   ],
   providers: [
     // AUTH_PROVIDERS,
