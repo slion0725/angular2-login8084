@@ -7,6 +7,8 @@ import { JwtComponent } from './jwt/jwt.component';
 import { Auth0Component } from './auth0/auth0.component';
 import { LogoutComponent } from './logout/logout.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { ExampleformComponent } from './exampleform/exampleform.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,6 +16,7 @@ const routes: Routes = [
   { path: 'jwt', component: JwtComponent },
   { path: 'auth0', component: Auth0Component },
   { path: 'logout', component: LogoutComponent },
+  { path: 'exampleform', component: ExampleformComponent },
   { path: '**', component: PagenotfoundComponent }
 ];
 

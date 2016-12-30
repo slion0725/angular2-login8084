@@ -1,0 +1,61 @@
+<form autocomplete="off" class="form-horizontal" role="form" #f="ngForm" novalidate>
+  <div class="panel-body">
+    <div class="form-group">
+      <label for="email" class="col-md-4 control-label">Email</label>
+      <div class="col-md-6">
+        <input type="email" class="form-control" name="email" placeholder="Email" maxlength="255" required [(ngModel)]="form.email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password" class="col-md-4 control-label">Password</label>
+      <div class="col-md-6">
+        <input type="password" class="form-control" name="password" placeholder="Password" minlength="6" required [(ngModel)]="form.password">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="Select" class="col-md-4 control-label">Select</label>
+      <div class="col-md-6">
+        <select name="select" [(ngModel)]="form.select">
+          <option *ngFor="let option of select" [ngValue]="option">{{option.display}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="Select Multiple" class="col-md-4 control-label">Select Multiple</label>
+      <div class="col-md-6">
+        <select name="selectmultiple" multiple [(ngModel)]="form.selectmultiple">
+          <option *ngFor="let option of selectmultiple" [value]="option.value">{{option.display}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-6 col-md-offset-4">
+        <div class="checkbox">
+          <label>
+
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-6 col-md-offset-4">
+        <div class="radio">
+          <label>
+
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-offset-4 col-md-6">
+        <button type="submit" class="btn btn-primary" (click)="submit(f.value, f.valid)">Submit</button>
+      </div>
+    </div>
+  </div>
+</form>
+<div *ngIf="f">
+  <div>Form details:</div>
+  <pre>Is form valid?: <br>{{f.valid | json}}</pre>
+  <pre>Is form submitted?: <br>{{f.submitted | json}}</pre>
+  <pre>submitted value: <br>{{f.value | json}}</pre>
+</div>

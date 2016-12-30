@@ -19,6 +19,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { AUTH_PROVIDERS, AuthHttp, AuthConfig } from 'angular2-jwt';
 import { Auth0Service } from './services/auth0.service';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { ExampleformComponent } from './exampleform/exampleform.component';
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   return new AuthHttp(new AuthConfig({
@@ -36,7 +37,8 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     JwtComponent,
     Auth0Component,
     LogoutComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    ExampleformComponent
   ],
   imports: [
     BrowserModule,
