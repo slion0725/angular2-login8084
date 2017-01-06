@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
-interface Form {
-  email: string;
-  password: string;
-  select: string;
-  selectmultiple: string[];
-}
-
 interface Select {
   value: string;
   display: string;
   other: string;
+}
+
+interface Form {
+  email: string;
+  password: string;
+  select: Select;
+  selectmultiple: string[];
+  isActive: boolean;
+  toggle: string;
+  gender: string;
 }
 
 @Component({
@@ -34,26 +37,27 @@ export class ExampleformComponent implements OnInit {
     { value: 'cherry', display: 'Cherry' },
   ];
 
-  public checkbox = [
-    { value: 'apple', display: 'Apple' },
-    { value: 'banana', display: 'Banana' },
-    { value: 'cherry', display: 'Cherry' },
+  public toggles = [
+    { value: 'toggled', display: 'Toggled' },
+    { value: 'untoggled', display: 'UnToggled' },
   ];
 
-  public radio = [
-    { value: 'apple', display: 'Apple' },
-    { value: 'banana', display: 'Banana' },
-    { value: 'cherry', display: 'Cherry' },
+  public genders = [
+    { value: 'F', display: 'Female' },
+    { value: 'M', display: 'Male' }
   ];
 
   constructor() { }
 
   ngOnInit() {
     this.form = {
-      email: 'test@test.com',
-      password: 'abc',
-      select: this.select[1].value,
-      selectmultiple: [this.selectmultiple[1].value]
+      email: '',
+      password: '',
+      select: this.select[0],
+      selectmultiple: [this.selectmultiple[0].value],
+      isActive: false,
+      toggle: this.toggles[0].value,
+      gender: this.genders[0].value
     };
   }
 
