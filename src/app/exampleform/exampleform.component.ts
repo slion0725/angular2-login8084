@@ -53,7 +53,7 @@ export class ExampleformComponent implements OnInit {
     this.form = {
       email: '',
       password: '',
-      select: this.select[0],
+      select: null,
       selectmultiple: [this.selectmultiple[0].value],
       isActive: false,
       toggle: this.toggles[0].value,
