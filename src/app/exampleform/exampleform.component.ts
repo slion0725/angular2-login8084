@@ -9,11 +9,11 @@ interface Select {
 interface Form {
   email: string;
   password: string;
-  select: Select;
-  selectmultiple: string[];
-  isActive: boolean;
-  toggle: string;
-  gender: string;
+  select?: Select;
+  selectmultiple?: string[];
+  isActive?: boolean;
+  toggle?: string;
+  gender?: string;
 }
 
 @Component({
@@ -61,7 +61,7 @@ export class ExampleformComponent implements OnInit {
     };
   }
 
-  submit(value, valid: Form) {
+  submit(value, valid: boolean) {
     console.log(value);
     console.log(valid);
   }

@@ -8,6 +8,7 @@ import { Auth0Component } from './auth0/auth0.component';
 import { LogoutComponent } from './logout/logout.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ExampleformComponent } from './exampleform/exampleform.component';
+import { ExampleformgroupComponent } from './exampleformgroup/exampleformgroup.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'auth0', component: Auth0Component },
   { path: 'logout', component: LogoutComponent },
   { path: 'exampleform', component: ExampleformComponent },
+  { path: 'exampleformgroup', component: ExampleformgroupComponent },
   { path: '**', component: PagenotfoundComponent }
 ];
 

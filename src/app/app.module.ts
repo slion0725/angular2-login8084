@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, Http, RequestOptions } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -20,6 +20,7 @@ import { AUTH_PROVIDERS, AuthHttp, AuthConfig } from 'angular2-jwt';
 import { Auth0Service } from './services/auth0.service';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ExampleformComponent } from './exampleform/exampleform.component';
+import { ExampleformgroupComponent } from './exampleformgroup/exampleformgroup.component';
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   return new AuthHttp(new AuthConfig({
@@ -38,11 +39,13 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     Auth0Component,
     LogoutComponent,
     PagenotfoundComponent,
-    ExampleformComponent
+    ExampleformComponent,
+    ExampleformgroupComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     MaterialModule.forRoot(),
     RoutingModule
