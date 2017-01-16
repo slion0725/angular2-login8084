@@ -21,6 +21,8 @@ import { Auth0Service } from './services/auth0.service';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ExampleformComponent } from './exampleform/exampleform.component';
 import { ExampleformgroupComponent } from './exampleformgroup/exampleformgroup.component';
+import { NextedfromComponent } from './nextedfrom/nextedfrom.component';
+import { NextedfromAddressComponent } from './nextedfrom-address/nextedfrom-address.component';
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   return new AuthHttp(new AuthConfig({
@@ -40,7 +42,9 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     LogoutComponent,
     PagenotfoundComponent,
     ExampleformComponent,
-    ExampleformgroupComponent
+    ExampleformgroupComponent,
+    NextedfromComponent,
+    NextedfromAddressComponent
   ],
   imports: [
     BrowserModule,

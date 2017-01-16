@@ -9,6 +9,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ExampleformComponent } from './exampleform/exampleform.component';
 import { ExampleformgroupComponent } from './exampleformgroup/exampleformgroup.component';
+import { NextedfromComponent } from './nextedfrom/nextedfrom.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'logout', component: LogoutComponent },
   { path: 'exampleform', component: ExampleformComponent },
   { path: 'exampleformgroup', component: ExampleformgroupComponent },
+  { path: 'nextedfrom', component: NextedfromComponent },
   { path: '**', component: PagenotfoundComponent }
 ];
 
